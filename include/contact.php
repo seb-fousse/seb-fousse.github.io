@@ -55,7 +55,7 @@ if ( !empty( $errors ) ) {
     // Enter the email address that you want to emails to be sent to.
     // Example $your_email_address = "joe.doe@yourdomain.com";
     
-    $your_email_address = "info@caliberthemes.com";   // Your Email Address
+    $your_email_address = "sebastiendefousse@gmail.com";   // Your Email Address
 
 
     // Configuration option.
