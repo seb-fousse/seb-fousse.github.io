@@ -1561,7 +1561,7 @@ Header General
   -webkit-transition: all 0.3s;
   -o-transition: all 0.3s;
   transition: all 0.3s;
-  background-color: #151515;
+  background-color: #000000;
 }
 #masthead.site-header #ham-trigger-wrap.open .ham-trigger span {
   background-color: transparent;
