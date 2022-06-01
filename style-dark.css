@@ -6,6 +6,7 @@
     Author: CaliberThemes
     Author URI: https://www.caliberthemes.com
     Version: 2.0
+    Modified By: Seb Fousse
 
 -----------------------------------------------------------------------------------*/
 /*--------------------------------------------------------------
@@ -52,10 +53,11 @@ h6 {
 
 p {
   font-size: 16px;
-  line-height: 26px;
+  line-height: 30px;
   margin: 0 0 20px;
   padding: 0;
   color: #c3c3c3;
+  font-weight: 400;
 }
 
 a {
@@ -194,7 +196,7 @@ body,
 .cbp-l-grid-agency-desc,
 input,
 textarea {
-  font-family: 'roboto', sans-serif;
+  font-family: 'Roboto Mono', sans-serif;
 }
 
 /*--------------------------------------------------------------
@@ -1726,12 +1728,12 @@ Portfolio Details
 .single-portfolio .portfolio .entry-header .entry-title {
   font-size: 38px;
   line-height: 44px;
-  font-weight: 500;
+  font-weight: 700;
   margin-bottom: 2px;
 }
 .single-portfolio .portfolio .entry-header .description {
   font-size: 20px;
-  font-weight: 400;
+  font-weight: 200;
   color: #ffffff;
 }
 .single-portfolio .portfolio .entry-header .entry-meta {
@@ -3106,7 +3108,7 @@ h2.widget-title:after {
 }
 .widget ol li {
   border-bottom: 1px solid #e3e3e3;
-  border-top: 1px solid #e3e3e;
+  border-top: 1px solid #e3e3e3;
   padding: 0.5em 0;
 }
 .widget ul li ul {
