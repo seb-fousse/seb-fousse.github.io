@@ -1040,7 +1040,7 @@ Header Standard
 --------------------------------------------------------------*/
 #masthead.site-header.standard {
   position: relative;
-  background-color: #ffffff;
+  background-color: #fbeee4;
 }
 
 @media (min-width: 992px) {
@@ -1193,11 +1193,11 @@ Header Hamburger
   #masthead.site-header.left-sidebar {
     width: 300px;
     height: 100%;
-    background-color: #fcfcfc;
+    background-color: #fbeee4;
     position: fixed;
     top: 0;
     left: 0;
-    border-right: 1px solid #f2f2f2;
+    border-right: 1px solid #fbeee4;
   }
   #masthead.site-header.left-sidebar .container, #masthead.site-header.left-sidebar .container-fluid {
     height: 100%;
@@ -1335,7 +1335,7 @@ Header Hamburger
 }
 @media (max-width: 1200px) {
   #masthead.site-header.left-sidebar {
-    background-color: #fcfcfc;
+    background-color: #fbeee4;
     position: relative;
   }
   #masthead.site-header.left-sidebar .container-fluid {
@@ -1408,7 +1408,7 @@ Header Hamburger
 Header Hamburger
 --------------------------------------------------------------*/
 #masthead.site-header.hamburger-side {
-  background-color: #fff;
+  background-color: #fbeee4;
 }
 #masthead.site-header.hamburger-side #site-navigation {
   width: 300px;
@@ -1426,7 +1426,7 @@ Header Hamburger
   margin-right: -80px;
 }
 #masthead.site-header.hamburger-side #site-navigation .menu a {
-  color: #fff;
+  color: #fbeee4;
 }
 #masthead.site-header.hamburger-side #site-navigation .menu > li {
   margin-bottom: 10px;
@@ -1462,7 +1462,7 @@ Header Hamburger
   color: #707070;
 }
 #masthead.site-header.hamburger-side #site-navigation .menu > li > a {
-  color: #fff;
+  color: #fbeee4;
 }
 #masthead.site-header.hamburger-side #site-navigation .menu > li a:hover {
   color: #707070;
@@ -1504,7 +1504,7 @@ Header Hamburger
   -webkit-transition: all 0.3s;
   -o-transition: all 0.3s;
   transition: all 0.3s;
-  background-color: #fff;
+  background-color: #fbeee4;
 }
 
 /*--------------------------------------------------------------
@@ -2823,7 +2823,7 @@ html {
 }
 
 body {
-  background-color: #fff;
+  background-color: #fbeee4;
 }
 
 .search.search-no-results .search-form .search-submit {
@@ -3480,7 +3480,8 @@ CTA
   opacity: .9;
 }
 .cta.style-2 {
-  background: #f3f3f3;
+  background: #fbeee4;
+  border: 3px solid #151515;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3788,18 +3789,19 @@ Buttons
   transition: 80ms ease-in;
   line-height: normal;
   text-decoration: none;
-  border: 2px solid #151515;
+  border: 3px solid #151515;
 }
 .btn-container a:hover {
-  background: #151515;
-  color: #fff;
+  background: #fbeee4;
+  color: #151515;
 }
 .btn-container.solid a {
   background-color: #151515;
-  color: #fff;
+  color: #fbeee4;
 }
 .btn-container.solid a:hover {
-  opacity: .9;
+  background-color: #fbeee4;
+  color: #151515;
 }
 
 .icon-box {
