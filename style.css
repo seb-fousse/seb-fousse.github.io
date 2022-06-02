@@ -3887,7 +3887,7 @@ Portfolio Section
 .cbp-l-subfilters .cbp-filter-item-active {
   color: #151515;
   outline: 2px #151515 dotted;
-  outline-offset: 12px;
+  outline-offset: 0.4rem;
 }
 
 .cbp-l-subfilters {
