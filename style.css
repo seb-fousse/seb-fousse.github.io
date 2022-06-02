@@ -3861,6 +3861,8 @@ Portfolio Section
 }
 
 .cbp-l-filters-text .cbp-filter-item {
+  margin-left: 1rem;
+  margin-right: 1rem;
   font-size: 15px;
   color: #151515;
 }
@@ -3883,7 +3885,9 @@ Portfolio Section
 
 .cbp-l-filters-text .cbp-filter-item.cbp-filter-item-active,
 .cbp-l-subfilters .cbp-filter-item-active {
-  color: rgba(21, 21, 21, 0.5);
+  color: #151515;
+  outline: 2px #151515 dotted;
+  outline-offset: 12px;
 }
 
 .cbp-l-subfilters {
@@ -3902,15 +3906,6 @@ Portfolio Section
 @media (min-width: 767px) {
   .cbp-l-filters-text .cbp-filter-item {
     padding: 0;
-  }
-  .cbp-l-filters-text .cbp-filter-item:after {
-    content: '/';
-    display: inline-block;
-    color: #151515;
-    margin: 0 11px 0 12px;
-  }
-  .cbp-l-filters-text .cbp-filter-item:last-of-type:after {
-    display: none;
   }
 
   .cbp-l-filters-text.text-justified {
