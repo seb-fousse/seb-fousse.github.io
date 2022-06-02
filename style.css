@@ -2225,7 +2225,7 @@ body.blog .site-main, body.single.single-post .site-main {
   }
 }
 body.blog .site-main article.post, body.single.single-post .site-main article.post {
-  margin-bottom: 60px;
+  margin-bottom: 20px;
 }
 body.blog .site-main article.post:last-of-type, body.single.single-post .site-main article.post:last-of-type {
   margin-bottom: 20px;
@@ -2844,9 +2844,9 @@ body {
     margin-bottom: 0;
   }
   body.blog-list-style:not(.single-post) .post-wrap .post-content {
-    width: 41.66666667%;
-    padding-top: 70px;
-    padding-left: 50px;
+    width: 80%;
+    padding-top: 10px;
+    padding-left: 10%;
   }
 }
 @media (max-width: 1199px) {
@@ -4535,5 +4535,6 @@ Portfolio Listing
     line-height: 38px;
   }
 }
+
 
 /*# sourceMappingURL=style.css.map */
