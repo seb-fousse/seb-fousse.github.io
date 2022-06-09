@@ -3894,8 +3894,9 @@ Portfolio Section
 .cbp-l-filters-text .cbp-filter-item.cbp-filter-item-active,
 .cbp-l-subfilters .cbp-filter-item-active {
   color: #151515;
-  outline: 2px #151515 dotted;
-  outline-offset: 0.6rem;
+  font-weight: 700;
+  text-decoration: underline;
+  
 }
 
 .cbp-l-subfilters {
