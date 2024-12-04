@@ -1,7 +1,8 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { Children, useEffect, useRef, useState } from "react";
+import { Children, useEffect, useRef, useState, ReactNode, MouseEvent } from "react";
 import resolveConfig from "tailwindcss/resolveConfig";
-import tailwindConfig from "tailwind.config.js"
+import tailwindConfig from "../../../tailwind.config.ts";
+import { ImageData } from "../../types/imageData.type";
 
 const fullConfig = resolveConfig(tailwindConfig);
 
@@ -25,16 +26,16 @@ function generateCoordinates(width: number, height: number, n: number, imageSize
 }
 
 interface ImageShuffleProps {
-  children: ;
-  data: ;
+  children: ReactNode;
+  data: ImageData[];
   delay: number;
 }
 
-const ImageShuffle = ({ children, data, delay }) => {
+const ImageShuffle = ({ children, data, delay }: ImageShuffleProps) => {
   const itemTransform = useRef("");
   const imageRenderCount = useRef(data.length);
-  const [imageForModal, setImageForModal] = useState(null);
-  const [delayChildren, setDelayChildren] = useState(delay);
+  const [imageForModal, setImageForModal] = useState<ImageData | null>(null);
+  const [delayChildren] = useState(delay);
 
   useEffect(() => {
 
@@ -53,7 +54,7 @@ const ImageShuffle = ({ children, data, delay }) => {
       padY
     );
 
-    let itemPositions = data.map((item, index) => ({
+    let itemPositions = data.map((_, index) => ({
       x: `${coordinates[index].x}px`,
       y: `${coordinates[index].y}px`,
       z: index,
@@ -62,33 +63,37 @@ const ImageShuffle = ({ children, data, delay }) => {
     itemPositions.forEach((item, index) => {
       const element = document.querySelector(
         `[data-draggable-item-index="${index}"]`
-      );
+      ) as HTMLElement;
       if (element) {
         element.style.left = item.x;
         element.style.top = item.y;
-        element.style.zIndex = item.z;
+        element.style.zIndex = String(item.z);
       } else {
         console.warn(`Element with index ${index} not found`);
       }
     });
   }, []);
 
-  const handleDragStart = (e) => {
-    e.target.style.zIndex = imageRenderCount.current;
+  const handleDragStart = (e: globalThis.MouseEvent) => {
+    const target = e.target as HTMLElement;
+    target.style.zIndex = String(imageRenderCount.current);
   };
 
-  const handleDragEnd = (e) => {
-    itemTransform.current = e.target.style.transform;
+  const handleDragEnd = (e: globalThis.MouseEvent) => {
+    const target = e.target as HTMLElement;
+    itemTransform.current = target.style.transform;
     imageRenderCount.current = imageRenderCount.current + 1;
   };
 
-  const handleMouseDown = (e) => {
-    itemTransform.current = e.target.style.transform;
+  const handleMouseDown = (e: MouseEvent) => {
+    const target = e.target as HTMLElement;
+    itemTransform.current = target.style.transform;
   };
 
-  const handleMouseUp = (e) => {
-    const index = e.target.getAttribute("data-draggable-item-index");
-    if (itemTransform.current == e.target.style.transform) {
+  const handleMouseUp = (e: MouseEvent) => {
+    const target = e.target as HTMLElement;
+    const index = Number(target.getAttribute("data-draggable-item-index"));
+    if (itemTransform.current == target.style.transform) {
       // If mouse down and mouse up happen at the same location
       console.log("clicked", index, itemTransform.current);
       setImageForModal(data[index]);
@@ -132,7 +137,7 @@ const ImageShuffle = ({ children, data, delay }) => {
         initial="hidden"
         animate="visible"
       >
-        {data.map((item, index) => (
+        {data.map((item: ImageData, index: number) => (
           <motion.div
             className="absolute flex justify-center align-middle text-center cursor-pointer"
             drag
@@ -207,7 +212,7 @@ const ImageShuffle = ({ children, data, delay }) => {
 interface ShuffledGalleryProps {
   title: string;
   subtitle: string;
-  data: {};
+  data: ImageData[];
   delay: number;
 }
 
