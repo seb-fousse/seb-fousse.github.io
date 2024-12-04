@@ -1,0 +1,74 @@
+[
+  {
+    "title": "Untitled",
+    "description": "",
+    "tool": "Acrylic paint & collage",
+    "src": "/images/art/1024x1024/1.jpg",
+    "blurPlaceholder": "/images/art/placeholder/1.jpg",
+    "alt": "Black painted letter on collaged paper"
+  },
+  {
+    "title": "Oliver",
+    "description": "Portrait of my younger brother as a stenciled collage",
+    "tool": "Watercolor & collage",
+    "src": "/images/art/1024x1024/2.jpg",
+    "blurPlaceholder": "/images/art/placeholder/2.jpg",
+    "alt": "Layered watercolor portrait of a boy on collaged paper"
+  },
+  {
+    "title": "Untitled",
+    "description": "",
+    "tool": "Watercolor & collage",
+    "src": "/images/art/1024x1024/3.jpg",
+    "blurPlaceholder": "/images/art/placeholder/3.jpg",
+    "alt": "Layered watercolor collage with Renaissance statue and poem"
+  },
+  {
+    "title": "Ima",
+    "description": "Remixed image of my grandmother",
+    "tool": "Mixed media",
+    "src": "/images/art/1024x1024/4.jpg",
+    "blurPlaceholder": "/images/art/placeholder/4.jpg",
+    "alt": "Surrealist image of a girl opening a door"
+  },
+  {
+    "title": "Galleria Vittorio Emanuele II",
+    "description": "",
+    "tool": "Oil paint & photo transfer",
+    "src": "/images/art/1024x1024/5.jpg",
+    "blurPlaceholder": "/images/art/placeholder/5.jpg",
+    "alt": "Oil painting on top of a black and white photo of an archway"
+  },
+  {
+    "title": "Samuel",
+    "description": "",
+    "tool": "Acrylic paint",
+    "src": "/images/art/1024x1024/6.jpg",
+    "blurPlaceholder": "/images/art/placeholder/6.jpg",
+    "alt": "Painting of a man. Pink hues."
+  },
+  {
+    "title": "Untitled",
+    "description": "",
+    "tool": "Acrylic paint & collage",
+    "src": "/images/art/1024x1024/7.jpg",
+    "blurPlaceholder": "/images/art/placeholder/7.jpg",
+    "alt": "Painting of a head on collaged newspaper"
+  },
+  {
+    "title": "Untitled",
+    "description": "",
+    "tool": "Acrylic paint & collage",
+    "src": "/images/art/1024x1024/8.jpg",
+    "blurPlaceholder": "/images/art/placeholder/8.jpg",
+    "alt": "Painting of a head on collaged book pages"
+  },
+  {
+    "title": "Self Portrait",
+    "description": "",
+    "tool": "Acrylic paint",
+    "src": "/images/art/1024x1024/9.jpg",
+    "blurPlaceholder": "/images/art/placeholder/9.jpg",
+    "alt": "Painting of a man. Blue hues."
+  }
+]
