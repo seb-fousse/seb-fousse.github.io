@@ -2,7 +2,7 @@
   "name": "sebf_xyz",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://sebf-xyz.github.io/",
+  "homepage": "sebf.xyz",
   "type": "module",
   "scripts": {
     "dev": "vite",
