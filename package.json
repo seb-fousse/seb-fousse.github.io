@@ -2,12 +2,12 @@
   "name": "sebf_xyz",
   "private": true,
   "version": "0.0.0",
-  "homepage": "sebf.xyz",
+  "homepage": "https://seb-fousse.github.io/",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist",
+    "deploy": "gh-pages -d dist --cname sebf.xyz",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
