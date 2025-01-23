@@ -1,13 +1,21 @@
 import { MouseEvent, useEffect, useState } from 'react'
-import styles from './Home.module.css'
-import { AnimatePresence, motion } from 'framer-motion';
+
+// Components
 import TypewriterComponent from 'typewriter-effect';
 import HomeMenuItem from '../../components/home/HomeMenuItem';
 import SectionHeading from '../../components/home/SectionHeading';
+
+// Hooks
 import useDocumentTitle from '../../hooks/useDocumentTitle';
 
+// Motion
+import { AnimatePresence, motion } from 'framer-motion';
+
+// Styles
+import styles from './Home.module.css'
+
 export default function Home() {
-  useDocumentTitle("Seb Fousse");
+  useDocumentTitle('Seb Fousse');
 
   const [showArrow, setShowArrow] = useState(false);
   const [isAtTop, setIsAtTop] = useState(true);
@@ -17,9 +25,9 @@ export default function Home() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 1
-      }
-    }
+        staggerChildren: 1,
+      },
+    },
   };
 
   const itemVariants = {
@@ -109,7 +117,7 @@ export default function Home() {
               
               {/* Splash video */}
               <div id="splash-image-wrapper" className="p-4 mx-auto xl:mx-0">
-                <img src={"images/home/splashImage.webp"} width={750} height={750} />
+                <img src={"images/home/splashImage512.webp"} width={512} height={512} />
               </div>
               
               {/* Title and links */}
@@ -123,7 +131,7 @@ export default function Home() {
                 
                 {/* Intro */}
                 <motion.div 
-                  id="intro" className="text-2xl"
+                  id="intro" className="text-2xl mt-8"
                   variants={itemVariants}
                 >
                   <TypewriterComponent
@@ -157,8 +165,8 @@ export default function Home() {
                 >
                   <div id="splash-menu" className="space-y-8">
                     <HomeMenuItem text="*about" href="#about" onClick={handleScroll}></HomeMenuItem>
-                    <HomeMenuItem text="*work" href="#work" onClick={handleScroll}></HomeMenuItem>
-                    <HomeMenuItem text="*contact" href="#contact" onClick={handleScroll}></HomeMenuItem>
+                    <HomeMenuItem text="*stuff" href="#stuff" onClick={handleScroll}></HomeMenuItem>
+                    <HomeMenuItem text="*words" href="#words" onClick={handleScroll}></HomeMenuItem>
                   </div>
                 </motion.div>
               </motion.div>
@@ -205,9 +213,9 @@ export default function Home() {
             </div>
           </section>
 
-          {/* Work section */}
-          <section id="work" className="mb-24">
-            <SectionHeading heading="*work" />
+          {/* Things section */}
+          <section id="stuff" className="mb-24">
+            <SectionHeading heading="*stuff" />
             <div className="flex text-2xl">
               Check out some of my&nbsp;
               <TypewriterComponent 
@@ -222,9 +230,9 @@ export default function Home() {
             </div>
           </section>
 
-          {/* Contact section */}
-          <section id="contact">
-            <SectionHeading heading="*contact" />
+          {/* Thoughts section */}
+          <section id="words">
+            <SectionHeading heading="*words" />
           </section>
         </main>
     </>

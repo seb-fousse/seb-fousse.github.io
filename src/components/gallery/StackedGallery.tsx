@@ -1,10 +1,10 @@
 import { useAnimate } from "framer-motion";
 import { useRef, useEffect, ReactNode } from "react";
-import { ImageData } from "../../types/imageData.type";
+import { IImageData } from "../../types/imageData.type";
 
 interface ImageStackProps {
   children: ReactNode;
-  data: ImageData[];
+  data: IImageData[];
   rotationRange: number;
 }
 
@@ -80,7 +80,7 @@ const ImageStack = ({ children, data, rotationRange }: ImageStackProps) => {
     >
       {children}
 
-      {data.map((item: ImageData, index: number) => (
+      {data.map((item: IImageData, index: number) => (
         <div key={index}>
           <img
             className="pointer-events-none absolute max-h-[60vh] max-w-[80vw] object-contain opacity-0"
@@ -104,7 +104,7 @@ const ImageStack = ({ children, data, rotationRange }: ImageStackProps) => {
 
 interface StackedGalleryProps {
   title: string;
-  data: ImageData[];
+  data: IImageData[];
   rotationRange: number;
 }
 

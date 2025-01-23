@@ -2,7 +2,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Children, useEffect, useRef, useState, ReactNode, MouseEvent } from "react";
 import resolveConfig from "tailwindcss/resolveConfig";
 import tailwindConfig from "../../../tailwind.config.ts";
-import { ImageData } from "../../types/imageData.type";
+import { IImageData } from "../../types/imageData.type";
 
 const fullConfig = resolveConfig(tailwindConfig);
 
@@ -27,14 +27,14 @@ function generateCoordinates(width: number, height: number, n: number, imageSize
 
 interface ImageShuffleProps {
   children: ReactNode;
-  data: ImageData[];
+  data: IImageData[];
   delay: number;
 }
 
 const ImageShuffle = ({ children, data, delay }: ImageShuffleProps) => {
   const itemTransform = useRef("");
   const imageRenderCount = useRef(data.length);
-  const [imageForModal, setImageForModal] = useState<ImageData | null>(null);
+  const [imageForModal, setImageForModal] = useState<IImageData | null>(null);
   const [delayChildren] = useState(delay);
 
   useEffect(() => {
@@ -137,7 +137,7 @@ const ImageShuffle = ({ children, data, delay }: ImageShuffleProps) => {
         initial="hidden"
         animate="visible"
       >
-        {data.map((item: ImageData, index: number) => (
+        {data.map((item: IImageData, index: number) => (
           <motion.div
             className="absolute flex justify-center align-middle text-center cursor-pointer"
             drag
@@ -212,7 +212,7 @@ const ImageShuffle = ({ children, data, delay }: ImageShuffleProps) => {
 interface ShuffledGalleryProps {
   title: string;
   subtitle: string;
-  data: ImageData[];
+  data: IImageData[];
   delay: number;
 }
 

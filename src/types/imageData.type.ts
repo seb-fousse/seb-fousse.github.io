@@ -1,4 +1,4 @@
-export interface ImageData {
+export interface IImageData {
   title: string;
   description: string;
   tool: string;
