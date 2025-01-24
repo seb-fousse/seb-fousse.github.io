@@ -1,4 +1,4 @@
-import styles from './HomeMenuItem.module.css'
+import styles from './ExplodingTextLink.module.css'
 import { MouseEventHandler } from 'react';
 
 // Reworking of this effect
@@ -10,7 +10,7 @@ interface Props {
     onClick: MouseEventHandler<HTMLAnchorElement>;
 }
 
-function HomeMenuItem({ text, href, onClick }: Props) {
+export default function ExplodingTextLink({ text, href, onClick }: Props) {
 
     const rand = (min: number, max: number) => Math.floor(Math.random() * (max - min + 1)) + min;
 
@@ -44,5 +44,3 @@ function HomeMenuItem({ text, href, onClick }: Props) {
         </div>
     );
 }
-
-export default HomeMenuItem;

@@ -1,8 +1,15 @@
-import { motion, AnimatePresence } from "framer-motion";
 import { Children, useEffect, useRef, useState, ReactNode, MouseEvent } from "react";
+
+// Config
 import resolveConfig from "tailwindcss/resolveConfig";
-import tailwindConfig from "../../../tailwind.config.ts";
-import { IImageData } from "../../types/imageData.type";
+import tailwindConfig from "../../../tailwind.config.ts"; 
+
+// Motion
+import { motion as m } from "motion/react";
+import { AnimatePresence } from 'motion/react';
+
+// Types
+import { IImageData } from "@/types/imageData.type.ts";
 
 const fullConfig = resolveConfig(tailwindConfig);
 
@@ -131,14 +138,14 @@ const ImageShuffle = ({ children, data, delay }: ImageShuffleProps) => {
       {Children.map(children, (child) => (
         <div className={imageForModal ? "blur" : ""}>{child}</div>
       ))}
-      <motion.div
+      <m.div
         className="container"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
         {data.map((item: IImageData, index: number) => (
-          <motion.div
+          <m.div
             className="absolute flex justify-center align-middle text-center cursor-pointer"
             drag
             key={index}
@@ -159,20 +166,20 @@ const ImageShuffle = ({ children, data, delay }: ImageShuffleProps) => {
               src={item.src}
               alt={item.alt}
             />
-          </motion.div>
+          </m.div>
         ))}
-      </motion.div>
+      </m.div>
       <AnimatePresence>
         {imageForModal ? (
           <>
-            <motion.div
+            <m.div
               initial={{ opacity: 0 }} // Starting state for the animation
               animate={{ opacity: 1 }} // Final state for the animation
               exit={{ opacity: 0 }}    // Exit state for the animation
               transition={{ duration: 0.2 }} // Animation duration
               className="flex flex-col fixed justify-center items-center text-center inset-0 z-[10001] p-16"
             >
-              <motion.button
+              <m.button
                 className="absolute top-4 right-4 text-xl font-bold p-2"
                 onClick={() => {
                   setImageForModal(null);
@@ -181,7 +188,7 @@ const ImageShuffle = ({ children, data, delay }: ImageShuffleProps) => {
                 transition={{repeat: Infinity, duration: 4, ease: "linear"}}
               >
                 &#x2715;
-              </motion.button>
+              </m.button>
               <img
                 className="max-w-full max-h-full object-contain p-4 pointer-events-none"
                 width="1024"
@@ -194,8 +201,8 @@ const ImageShuffle = ({ children, data, delay }: ImageShuffleProps) => {
                 <span className="font-normal">{imageForModal.tool}</span>
               </div>
               <div className="font-light">{imageForModal.description}</div>
-            </motion.div>
-            <motion.div
+            </m.div>
+            <m.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 0.75 }}
               exit={{ opacity: 0 }}

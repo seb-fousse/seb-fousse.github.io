@@ -1,6 +1,10 @@
-import { useAnimate } from "framer-motion";
 import { useRef, useEffect, ReactNode } from "react";
-import { IImageData } from "../../types/imageData.type";
+
+// Motion
+import { useAnimate } from "motion/react";
+
+// Types
+import { IImageData } from "@/types/imageData.type";
 
 interface ImageStackProps {
   children: ReactNode;

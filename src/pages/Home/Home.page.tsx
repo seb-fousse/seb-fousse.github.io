@@ -2,14 +2,15 @@ import { MouseEvent, useEffect, useState } from 'react'
 
 // Components
 import TypewriterComponent from 'typewriter-effect';
-import HomeMenuItem from '../../components/home/HomeMenuItem';
-import SectionHeading from '../../components/home/SectionHeading';
+import ExplodingTextLink from '@/components/ExplodingTextLink/ExplodingTextLink.component';
+import HomeSection from './HomeSection.component';
 
 // Hooks
-import useDocumentTitle from '../../hooks/useDocumentTitle';
+import useDocumentTitle from '@/hooks/useDocumentTitle';
 
 // Motion
-import { AnimatePresence, motion } from 'framer-motion';
+import { motion as m } from "motion/react";
+import { AnimatePresence } from 'motion/react';
 
 // Styles
 import styles from './Home.module.css'
@@ -72,7 +73,7 @@ export default function Home() {
 
     if (isAtTop) {
       // Start the timer only if the user is at the top
-      timer = setTimeout(() => {
+      timer = window.setTimeout(() => {
         setShowArrow(true);
       }, 6000); // 6 seconds
     }
@@ -112,7 +113,7 @@ export default function Home() {
         <main className="max-w-7xl m-auto">
           
           {/* Splash section */}
-          <section id="splash" className="container sm:flex sm:mx-auto mb-24">
+          <section id="splash" className="container sm:flex sm:mx-auto">
             <div className="flex flex-row flex-wrap mx-auto my-auto justify-start xl:justify-center">
               
               {/* Splash video */}
@@ -121,7 +122,7 @@ export default function Home() {
               </div>
               
               {/* Title and links */}
-              <motion.div 
+              <m.div 
                 id="title-and-menu" 
                 className="absolute bottom-0 left-0 sm:relative text-neutral-800 px-4 lg:px-8 lg:mx-28 xl:mx-0"
                 variants={containerVariants}
@@ -130,7 +131,7 @@ export default function Home() {
               >
                 
                 {/* Intro */}
-                <motion.div 
+                <m.div 
                   id="intro" className="text-2xl mt-8"
                   variants={itemVariants}
                 >
@@ -143,10 +144,10 @@ export default function Home() {
                       loop: true,
                     }}
                   />
-                </motion.div>
+                </m.div>
 
                 {/* Name */}
-                <motion.div 
+                <m.div 
                   id="name" className="font-bold text-7xl"
                   variants={itemVariants}
                 >
@@ -156,40 +157,39 @@ export default function Home() {
                   <h1>
                     Foussé
                   </h1>
-                </motion.div>
+                </m.div>
 
                 {/* Links */}
-                <motion.div 
-                  id="splash-menu-wrapper" className="menu-wrapper py-4 xl:block hidden"
+                <m.div 
+                  id="splash-menu-wrapper" className="menu-wrapper py-8 xl:block hidden"
                   variants={itemVariants}
                 >
                   <div id="splash-menu" className="space-y-8">
-                    <HomeMenuItem text="*about" href="#about" onClick={handleScroll}></HomeMenuItem>
-                    <HomeMenuItem text="*stuff" href="#stuff" onClick={handleScroll}></HomeMenuItem>
-                    <HomeMenuItem text="*words" href="#words" onClick={handleScroll}></HomeMenuItem>
+                    <ExplodingTextLink text="*about" href="#about" onClick={handleScroll}></ExplodingTextLink>
+                    <ExplodingTextLink text="*stuff" href="#stuff" onClick={handleScroll}></ExplodingTextLink>
+                    <ExplodingTextLink text="*words" href="#words" onClick={handleScroll}></ExplodingTextLink>
                   </div>
-                </motion.div>
-              </motion.div>
+                </m.div>
+              </m.div>
             </div>
           </section>
 
           {/* Downward Arrow */}
           <AnimatePresence>
             {showArrow && (
-              <motion.div
+              <m.div
                 className="fixed bottom-5 right-5 m-1 md:m-3 text-5xl md:text-2xl animate-bounce"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
               >
                 &darr;
-              </motion.div>
+              </m.div>
             )}
           </AnimatePresence>
 
           {/* About section */}
-          <section id="about" className="container mx-auto flex flex-col mb-24 px-4">
-            <SectionHeading heading="*about" />
+          <HomeSection id="about" heading="*about" className="mb-24">
             <div className="flex flex-col xl:flex-row items-center xl:items-start gap-8">
               {/* Text Column */}
               <div className="flex-1 max-w-2xl space-y-4">
@@ -211,11 +211,10 @@ export default function Home() {
                 />
               </div>
             </div>
-          </section>
+          </HomeSection>
 
           {/* Things section */}
-          <section id="stuff" className="mb-24">
-            <SectionHeading heading="*stuff" />
+          <HomeSection id="stuff" heading="*stuff" className="mb-24">
             <div className="flex text-2xl">
               Check out some of my&nbsp;
               <TypewriterComponent 
@@ -228,12 +227,11 @@ export default function Home() {
                 }}
               />
             </div>
-          </section>
+          </HomeSection>
 
           {/* Thoughts section */}
-          <section id="words">
-            <SectionHeading heading="*words" />
-          </section>
+          <HomeSection id="words" heading="*words">
+          </HomeSection>
         </main>
     </>
   );
